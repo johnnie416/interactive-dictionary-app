@@ -1,0 +1,23 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f6fa;
+  color: #2f3640;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1, h2, h4 {
+  color: #130f40;
+}
+
+input:focus {
+  box-shadow: 0 0 5px #0097e6;
+}
+
+.btn-primary:hover {
+  background-color: #40739e;
+}

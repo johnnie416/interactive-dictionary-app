@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <form method="POST" class="d-flex justify-content-center mb-3">
+    <input type="text" name="word" placeholder="Enter a word" class="form-control w-50 me-2" required>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  {% if error %}
+    <div class="alert alert-danger text-center">{{ error }}</div>
+  {% endif %}
+{% endblock %}

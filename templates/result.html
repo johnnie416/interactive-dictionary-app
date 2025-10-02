@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+  <a href="{{ url_for('home') }}" class="btn btn-secondary mb-3">🔙 Search again</a>
+
+  <div class="card p-3">
+    <h2>{{ word | capitalize }}</h2>
+    <p><strong>Phonetic:</strong> {{ data.get('phonetic', 'N/A') }}</p>
+
+    <h4>Meanings:</h4>
+    <ul>
+      {% for meaning in data.meanings %}
+        <li>
+          <strong>{{ meaning.partOfSpeech }}</strong>
+          <ul>
+            {% for definition in meaning.definitions %}
+              <li>{{ definition.definition }}
+                {% if definition.example %}
+                  <br><em>Example: {{ definition.example }}</em>
+                {% endif %}
+                {% if definition.synonyms %}
+                  <br><small>Synonyms: {{ definition.synonyms | join(', ') }}</small>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
